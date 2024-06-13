@@ -6,7 +6,6 @@ fetch(
 )
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
     displayMovies(data.results);
 
     searchInput.addEventListener("input", () => {
@@ -21,7 +20,6 @@ fetch(
 function displayMovies(movies) {
   gallery.innerHTML = "";
   movies.forEach((movie) => {
-    console.log(movie);
     const div = document.createElement("div");
     div.className = "movie_container";
 
@@ -48,7 +46,7 @@ function displayMovies(movies) {
           const trailer = videoData.results.find(video => video.type === "Trailer" && video.site === "YouTube");
           if (trailer) {
             const trailerUrl = `https://www.youtube.com/watch?v=${trailer.key}`;
-            window.open(trailerUrl, '_blank');
+            window.location.href = trailerUrl;
           } else {
             alert("Trailer not found.");
           }
@@ -62,6 +60,7 @@ function displayMovies(movies) {
     gallery.appendChild(div);
   });
 }
+
 
 
 
