@@ -1,0 +1,151 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: aqua;
+}
+
+nav {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+#search {
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  width: 80%;
+  max-width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 44px; 
+  width: 100%;
+  margin-top: 20px; 
+}
+
+.movie_container {
+  background-color: rgb(56, 72, 93);
+  max-width: 200px;
+  flex: 1 1 calc(20% - 44px);
+  border-radius: 15px;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.movie_container img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px 15px 0 0; 
+}
+
+.title {
+  color: white;
+  margin: 10px 0 5px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.rating {
+  color: white;
+  margin: 5px 0;
+  text-align: center;
+  font-size: 1em;
+}
+
+.movie_container:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive styles */
+@media (min-width: 1200px) {
+  .movie_container {
+    flex: 1 1 calc(20% - 44px); 
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .movie_container {
+    flex: 1 1 calc(25% - 44px); 
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .movie_container {
+    flex: 1 1 calc(33.33% - 44px); 
+  }
+}
+
+@media (max-width: 767px) {
+  .movie_container {
+    flex: 1 1 calc(100% - 44px); 
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  header {
+    font-size: 1.5em;
+  }
+
+  .title {
+    font-size: 1em;
+  }
+
+  .rating {
+    font-size: 0.9em;
+  }
+}
